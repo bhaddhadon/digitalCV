@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anomalous Adviser Detection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Anomalous Adviser Detection</h1>
+
+            <ul>
+                <li><a href="https://vimeo.com/553223513">SBR technology 2021 winner</a></li>
+                <li><a href="https://vimeo.com/600130443">Insurance Asia 2021 winner</a></li>
+            </ul>
+            <strong> Problem Statement</strong>
+            <p>Adviser mis-selling is proven to be costly to future cashflow both financially and reputation-wise. Not to mention deviation in compliance to rules set by the regulator. The key is to switch from being reactive to proactive in tackling this problem.</p>
+            
+            <strong> Solution</strong>
+            <p>An outlier detection model  with risk factors as features can help in drawing a heat map to show where anomalous and potentially risky behaviour is concentrated. A monthly watchlist is then created for compliance team to focus in the right area, whether it is certain behaviors, agencies or a list of individuals.</p>
+
+            <ul>
+                <li>Model: Isolation Forest</li>
+                <li>Key Model Measurements: </li>
+                    <ul>
+                        <li>Separation power of anomalous (potentially risky) and normal advisers (Kolmogorov–Smirnov statistic)</li>
+                        <li>Customer's complaint recall (Complaints fall within anomaly group)</li>    
+                    </ul>
+                <li>Key Business Objective: Long term decline in customer's complaint</li>
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>More patterns of risky behavior would be discovered, compared to a rigid way of traditional rule-based checklist, to which relationship between recall and size of a watchlist can be non-linear. A watchlist from outlier detection can cover various extremities and inter-play between high value in multiple risk factors without expanding the size of the watchlist too much.</li>
+                <li>A new monitoring process being acknowledged by the regulator.</li>    
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>Customer's complaint recall: one year after launch, ~55% of complaints happened to advisers within the watchlist. ~80% if only consider severe complaints.</li>
+                <li>Kolgomorov-Smirnov stats: remain at ~60%</li>
+                <li>Customer's complaints came down signifcantly, also thanks to covid-19 restrictions and other measures enforced by the regulator, on top of the impact from this initiative.</li>
+            </ul>
+
+            <strong> Key Findings</strong>
+            <ul>
+                <li>Some patterns had emerged e.g. consective months of high sales coupled with high replacement of policies and concentration in certain products. This cannot be easily captured using rule-based criteria.</li>
+                <li>Some risky behavior, from details of customer's complaints, are yet to be encapsulated into risk factors e.g. customer's data handling, rushing to meet sales targets, unusally high frequency of policy details change, etc.</li>
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>More risk factors can be introduced in model fine-tuning.</li>
+                <li>Ensemble between the current unsupervised outlier detection model and a supervised compalint classification model.</li>
+            </ul>
+        </div>
+    </body>
+</html>

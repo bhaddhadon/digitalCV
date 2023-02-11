@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anomalous Adviser Detection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Smart Leads Allocation</h1>
+
+
+            <strong> Problem Statement</strong>
+            <p>Turnover time between customers submitting online forms asking to insurance advise and the time they get to speak to advisers can take quite long. Sometimes as long as 5 days due to a manual process of leads assignment. More often than not, product skillset and clientele skillset were also not in consideration, resulting in suboptimal conversion.</p>
+            
+            <strong> Solution</strong>
+            <p>Automation: A work pipeline can be established to assign leads, alert advisers and monitoring their vigilance.</p>
+            <p>Leads Assignment: </p>
+            <ul>
+                <li>Adviser Clustering: K-means clusters on a feature list of product skillset and clientele's demographics skillset.</li>
+                <li>Next Best Adviser: Multi-class classification with product and customer's demographics as features and adviser cluster as a target variable.</li> 
+                <li>Adviser ranking within targeted adviser clusters: A business logic of picking individual adviser wihtin a targeted cluster to assign a lead.</li>   
+            </ul>
+
+            <p>Key Model Measurements: </p>
+                <ul>
+                    <li>Unsupervised adviser clustering: Elbow curve</li>
+                    <li>Supervised Next Best Adviser: ~75% Accuracy</li>    
+                </ul>
+            <p>Key Business Objective: </p>
+            <ul>
+                <li>Leads conversion rate uplift, compared to traditional numbers</li>
+                <li>Turnaround time reduction</li>    
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>Lower turnaround time</li>
+                <li>Higher conversion rate</li> 
+                <li>Better customer experience - adviser with relevant product knowledge and accustomed to advising customer with similar need stage</li>   
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>~80% of turnaround time down to less than 24 hours</li>
+                <li>~100% uplift in conversion rate translating into >1Mn SGD of incremental revenue</li>    
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>Scale the pipeline to all online forms on the company's website/app.</li>
+                <li>Pipeline optimisation: from a scheduled workflow to real-time API call</li>    
+            </ul>
+        </div>
+    </body>
+</html>
