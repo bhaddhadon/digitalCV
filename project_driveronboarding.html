@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anomalous Adviser Detection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Driver Onboarding Auto-Approval</h1>
+
+
+            <strong> Problem Statement</strong>
+            <p>Driver Onboarding process's turnaround time is a bit long, especially in a big market with huge population. The bottleneck is a manual reviewing process not being scalable and, more often than not, resulting in the application being disapproved due to some flaws in the uploaded documents.</p>
+            
+            <strong> Solution</strong>
+            <p>An automated process mimicking checks performed by humans. The process combines the use of </p>
+            <ul>
+                <li>1. OCR of info on documents/images and make sure the info is matched/ mostly matched with the info submitted from the registration portal. </li>
+                <li>2. Object Detections of items in both positive and negative lists to make sure the image meets the requirements. </li>
+                <li>3. Image Quality measures: blurriness/ overexposure/ underexposure</li>
+                <li>4. Identity Matching: between submitted images and ID documents</li>
+                <li>5. Document Spoof Detection: PDF metadata/ Image splicing/ Copy-move-forgery</li>
+            </ul>
+
+            <p>Key Model Measurements: </p>
+                <ul>
+                    <li>OCR Match Rate: 80%+ Recall given minimum acceptable Levenshtein Match Rate</li>
+                    <li>Custom Object Detection: 95% mAP</li>
+                    <li>Generic Object Detection: 90%+ Recall</li>    
+                </ul>
+            <p>Key Business Objective: </p>
+            <ul>
+                <li>Auto-verified Rate</li>
+                <li>Turnaround time reduction</li>    
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>Lower turnaround time</li>
+                <li>Higher conversion rate</li> 
+                <li>Better customer experience - adviser with relevant product knowledge and accustomed to advising customer with similar need stage</li>   
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>Auto-verified registration apps done within a day</li>
+                <li>The auto-verification process can be halted when there're a new essential requirements added</li>
+                <li>Auto-verified rate is at 20%. The number can go higher with rules simplification/relaxation.</li>    
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>Rules simplification/relaxation</li>
+                <li>Move the quality assurance process to frontend, to minimize disapproval</li>    
+            </ul>
+        </div>
+    </body>
+</html>
