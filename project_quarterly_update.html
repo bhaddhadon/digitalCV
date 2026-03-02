@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Quarterly Update</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Quarterly Update — Personal Stock Analysis Tool</h1>
+
+
+            <strong> Problem Statement</strong>
+            <p>Keeping up with quarterly earnings across a personal watchlist spanning multiple exchanges (US, Japan, Hong Kong, Singapore, Malaysia, Australia) is time-consuming. Each filing runs tens to hundreds of pages. Extracting the metrics, forward guidance, and KPIs that matter — and tracking management forecast accuracy over time — is a repetitive process that does not benefit from being done manually.</p>
+
+            <strong> Solution</strong>
+            <p>A self-hosted FastAPI application that automates the end-to-end pipeline from earnings filing ingestion to interactive report generation and upload into Google NotebookLM for further querying.</p>
+            <ul>
+                <li>1. Filing ingestion: automatically fetches quarterly and annual filings from SEC EDGAR (10-Q / 10-K), Japan EDINET (yuho / shihanki), and exchanges including ASX, HKEX, SGX, and Bursa.</li>
+                <li>2. Auto-summarisation: uploads PDFs to NotebookLM as data sources and queries them with YAML-defined structured prompts to extract financial metrics, operational KPIs, and management forecasts from MD&amp;A sections.</li>
+                <li>3. Report generation: produces interactive HTML reports with Plotly charts covering multi-quarter revenue, EPS, and KPI trends, alongside management forecast vs. actuals tracking.</li>
+                <li>4. Auto-upload: completed summary reports are re-uploaded to NotebookLM as additional sources, enabling cross-filing queries across the full earnings history of a company.</li>
+                <li>5. Storage: PDFs and reports are archived to DigitalOcean Spaces (S3-compatible); structured data is persisted in SQLite (local) or PostgreSQL (production).</li>
+            </ul>
+
+            <p>Tech Stack: </p>
+            <ul>
+                <li>Backend: Python / FastAPI, SQLAlchemy ORM</li>
+                <li>AI: Google NotebookLM CLI (nlm) for document querying and summarisation</li>
+                <li>Charts: Plotly (interactive HTML reports)</li>
+                <li>Storage: DigitalOcean Spaces (S3), SQLite / PostgreSQL</li>
+                <li>Deployment: DigitalOcean Droplet, nginx reverse proxy, systemd service</li>
+                <li>Hosted at: <a href="http://515bedokrsvr.com" target="_blank">515bedokrsvr.com</a></li>
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>Eliminates manual extraction of earnings metrics across a multi-market watchlist</li>
+                <li>Builds a queryable historical earnings knowledge base in NotebookLM for each tracked company</li>
+                <li>Tracks management forecast accuracy quarter over quarter — a signal that is otherwise easy to lose track of</li>
+                <li>Extensible to any exchange or filing format via modular ingestion services and YAML prompt templates</li>
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>End-to-end pipeline runs unattended from filing fetch to NotebookLM upload</li>
+                <li>Supports 6 exchanges across 5 markets with fiscal year normalisation (e.g. 10-K anchors Q4, preceding 10-Qs mapped to Q1–Q3)</li>
+                <li>Interactive charts and forecast tracking tables generated per company per quarter</li>
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>Add earnings calendar integration to trigger ingestion automatically on filing dates</li>
+                <li>Expand forecast accuracy scoring with quantitative miss/beat metrics</li>
+            </ul>
+        </div>
+    </body>
+</html>

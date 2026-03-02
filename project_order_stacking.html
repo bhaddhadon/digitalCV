@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Order Stacking SLA System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Order Stacking Allowance System based on SLA</h1>
+
+
+            <strong> Problem Statement</strong>
+            <p>The legacy order stacking system operated on a simple quota-based rule: a driver (e.g. a motorcyclist in Kuala Lumpur or a van driver in Hong Kong) could carry up to 2 priority or regular orders and a maximum of 4 orders in total across all tiers (priority, regular, and pooling — the cheapest tier). This hard cap made no consideration of time, distance, route, or order destination proximity. As a result, the system was inflexible: it could not differentiate between a driver taking two nearby orders and one taking two orders in opposite directions, treating both scenarios identically regardless of the actual impact on delivery time.</p>
+
+            <strong> Solution</strong>
+            <p>A shift from quota-based stacking to a Service-Level-Agreement (SLA) driven model. Instead of capping the number of orders a driver can carry, the system determines stacking eligibility by simulating the projected delivery timeline for each order in the current stack if a new order were to be added. A driver is permitted to accept an additional order as long as no existing order in the stack would be delayed beyond its respective SLA threshold.</p>
+            <ul>
+                <li>1. Route and ETA simulation for each candidate order addition, incorporating real-time traffic and spatial data.</li>
+                <li>2. Per-tier SLA enforcement: priority orders are held to stricter latency budgets, while regular and pooling orders carry more lenient thresholds.</li>
+                <li>3. Dynamic stacking decisions made at the time of order assignment, replacing static quota rules.</li>
+            </ul>
+
+            <p>Key Business Objectives: </p>
+            <ul>
+                <li>Stackable rate per order tier (priority / regular / pooling)</li>
+                <li>Average stack size increase post-rollout</li>
+                <li>Shorter delivery time for stacked orders compared to legacy system</li>
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>Greater operational flexibility for regular and pooling orders, enabling higher stacking rates and improved fleet efficiency</li>
+                <li>Stricter, more reliable delivery guarantees for priority orders</li>
+                <li>Reduced reliance on arbitrary hard caps — stacking decisions are grounded in real delivery impact</li>
+                <li>Enables the business to tune SLA thresholds independently per order tier as market conditions evolve</li>
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>Priority order SLA compliance maintained or improved despite allowing uncapped stacking</li>
+                <li>Measurable increase in average orders per trip for regular and pooling tiers</li>
+                <li>No significant degradation in customer satisfaction scores for non-priority tiers</li>
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>Fine-tune SLA thresholds per market and vehicle type based on observed delivery patterns</li>
+                <li>Explore oder bundeling, having observed driver-initiated stacking route</li>
+            </ul>
+        </div>
+    </body>
+</html>

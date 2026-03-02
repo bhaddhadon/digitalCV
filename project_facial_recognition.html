@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Driver Facial Recognition</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container--main">
+            <a href="index.html">&#x2190; Go Back</a>
+            <h1>Driver Facial Recognition</h1>
+
+
+            <strong> Problem Statement</strong>
+            <p>Multiple regulatory bodies across different markets mandate that ride-hailing and delivery platforms periodically verify that the person operating a vehicle matches the registered driver account. Beyond compliance, unverified identity creates two significant risks: account rental (a registered driver lending or selling access to an unverified individual) and stolen identity (fraudulent account creation using another person's credentials). Both scenarios expose passengers and businesses to safety and liability risks, and may invalidate insurance coverage for incidents involving unverified drivers.</p>
+
+            <strong> Solution</strong>
+            <p>A periodical mandatory facial verification system that prompts drivers to take a real-time selfie and compares it against the profile picture submitted during onboarding. The pipeline spans frontend to backend:</p>
+            <ul>
+                <li>1. Frontend facial detection (C++): real-time face detection on-device before the selfie is captured, ensuring a valid face is present and reducing backend rejection rates from poor-quality submissions.</li>
+                <li>2. Backend identity matching: the captured selfie is compared against the driver's onboarding profile image using facial similarity scoring.</li>
+                <li>3. Dual-provider architecture: the system supports integration with third-party facial recognition API providers as well as an in-house developed model, allowing flexibility to switch or blend providers based on accuracy, cost, and regulatory requirements per market.</li>
+            </ul>
+
+            <p>Key Model Measurements: </p>
+            <ul>
+                <li>Face match accuracy: True Accept Rate (TAR) at a controlled False Accept Rate (FAR)</li>
+                <li>Frontend face detection rate: proportion of sessions where a valid face is detected before submission</li>
+                <li>Liveness / anti-spoofing pass rate (where applicable)</li>
+            </ul>
+            <p>Key Business Objectives: </p>
+            <ul>
+                <li>Regulatory compliance rate across all operating markets</li>
+                <li>Fraudulent account detection rate (identity theft / account rental)</li>
+                <li>Verification completion rate without driver disruption</li>
+            </ul>
+
+            <strong> Benefits</strong>
+            <ul>
+                <li>Meets mandatory regulatory requirements for driver identity verification across multiple markets</li>
+                <li>Supports insurance coverage validity by ensuring the operating driver matches the insured account holder</li>
+                <li>Provides a signal for detecting and actioning fraudulent activity such as account rental and stolen identity</li>
+                <li>Flexible architecture accommodates both third-party providers and in-house models, enabling cost and accuracy optimisation per market</li>
+            </ul>
+
+            <strong> Evaluation</strong>
+            <ul>
+                <li>Regulatory audit compliance achieved across target markets</li>
+                <li>Reduction in confirmed account-sharing and stolen identity incidents post-rollout</li>
+                <li>Frontend face detection successfully filters out a significant proportion of unusable selfie submissions before backend processing</li>
+            </ul>
+
+            <strong> Next Steps</strong>
+            <ul>
+                <li>Expand liveness detection to counter photo spoofing attempts</li>
+                <li>Improve in-house model performance to reduce dependency on third-party providers in cost-sensitive markets</li>
+                <li>Integrate verification outcomes into driver trust scoring for downstream risk-based decisions</li>
+            </ul>
+        </div>
+    </body>
+</html>
