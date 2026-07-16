@@ -20,7 +20,7 @@
             <strong> Solution</strong>
             <p>A shift from quota-based stacking to a Service-Level-Agreement (SLA) driven model. Instead of capping the number of orders a driver can carry, the system determines stacking eligibility by simulating the projected delivery timeline for each order in the current stack if a new order were to be added. A driver is permitted to accept an additional order as long as no existing order in the stack would be delayed beyond its respective SLA threshold.</p>
             <ul>
-                <li>1. Route and ETA simulation for each candidate order addition, incorporating real-time traffic and spatial data.</li>
+                <li>1. Route and ETA simulation for each candidate order addition, incorporating historical traffic and spatial data.</li>
                 <li>2. Per-tier SLA enforcement: priority orders are held to stricter latency budgets, while regular and pooling orders carry more lenient thresholds.</li>
                 <li>3. Dynamic stacking decisions made at the time of order assignment, replacing static quota rules.</li>
             </ul>
